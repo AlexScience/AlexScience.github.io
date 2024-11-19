@@ -6,20 +6,14 @@
 </head>
 <body>
 <h1 id="resume-header">Выберите язык резюме</h1>
-<ul>
+<ul id="resume-list">
     <li><a href="CV_AlexScience_ru.pdf">Русский</a></li>
-        <li><a href="CV_AlexScience_en.pdf">Русский</a></li>
 </ul>
 <script>
     var userLanguage = navigator.language || navigator.userLanguage;
-    var titleElement = document.getElementById("page-title");
-    var headerElement = document.getElementById("resume-header");
-    if (userLanguage.startsWith("ru")) {
-        titleElement.innerText = "Выбор языка";
-        headerElement.innerText = "Выберите язык резюме";
-    } else {
-        titleElement.innerText = "Language Selection";
-        headerElement.innerText = "Choose Resume Language";
+
+    if (!userLanguage.startsWith("ru")) {
+        document.body.innerHTML = ""; 
     }
 </script>
 </body>
